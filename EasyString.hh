@@ -215,4 +215,13 @@ namespace easystring {
     inline std::vector<char> to_char_vector(const std::string& text) {
         return std::vector<char>(text.begin(), text.end());
     }
+
+    /// Repeats a string `amount` of times.
+    inline std::string repeat(const std::string& text, unsigned int amount) {
+        std::ostringstream result;
+        for (int i = 0; i < amount; i++) {
+            result << text;
+        }
+        return result.str();
+    }
 }

@@ -86,3 +86,6 @@ For example, `es::partition("Hello", 2) => ("He", "llo")`.
 
 ### `es::to_char_vector(string) -> vector<char>`
 Converts a string into a vector of `char`s.
+
+### `es::repeat(string, amount) -> string`
+Repeats the string `amount` of times.
