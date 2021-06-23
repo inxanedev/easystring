@@ -39,4 +39,24 @@ namespace easystring {
         }
         return result.str();
     }
+
+    /// Transforms a string into the title case.
+    inline std::string title_case(const std::string& text) {
+        std::ostringstream result;
+        
+        std::istringstream iss(text);
+        do {
+            std::string word;
+            std::ostringstream transformed_word;
+            iss >> word;
+            for (int i = 0; i < word.length(); i++) {
+                if (i == 0) transformed_word << static_cast<char>(toupper(word[0]));
+                else transformed_word << static_cast<char>(tolower(word[i]));
+            }
+            result << transformed_word.str() << ' ';
+        } while (iss);
+
+        std::string to_trim = result.str();
+        return to_trim.substr(0, to_trim.length() - 1);
+    }
 }
