@@ -33,7 +33,7 @@ namespace easystring {
     }
 
     /// Puts `amount` of `c` to the left of `text`.
-    inline std::string pad_left(const std::string& text, char c, size_t amount) {
+    inline std::string pad_left(const std::string& text, size_t amount, char c = ' ') {
         std::ostringstream result;
         for (int i = 0; i < amount; i++) {
             result << c;
@@ -43,7 +43,7 @@ namespace easystring {
     }
 
     /// Puts `amount` of `c` to the right of `text`.
-    inline std::string pad_right(const std::string& text, char c, size_t amount) {
+    inline std::string pad_right(const std::string& text, size_t amount, char c = ' ') {
         std::ostringstream result;
         result << text;
         for (int i = 0; i < amount; i++) {
