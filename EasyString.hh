@@ -19,4 +19,24 @@ namespace easystring {
         }
         return result.str();
     }
+
+    /// Puts `amount` of `c` to the left of `text`.
+    inline std::string pad_left(const std::string& text, char c, int amount) {
+        std::ostringstream result;
+        for (int i = 0; i < amount; i++) {
+            result << c;
+        }
+        result << text;
+        return result.str();
+    }
+
+    /// Puts `amount` of `c` to the right of `text`.
+    inline std::string pad_right(const std::string& text, char c, int amount) {
+        std::ostringstream result;
+        result << text;
+        for (int i = 0; i < amount; i++) {
+            result << c;
+        }
+        return result.str();
+    }
 }
