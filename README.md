@@ -83,3 +83,6 @@ Capitalize the first letter of the string.
 ### `es::partition(string, index) -> (string, string)`
 Splits the string into two at the specified index, and returns an std::pair containing both of them.
 For example, `es::partition("Hello", 2) => ("He", "llo")`.
+
+### `es::to_char_vector(string) -> vector<char>`
+Converts a string into a vector of `char`s.

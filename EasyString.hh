@@ -210,4 +210,9 @@ namespace easystring {
     inline std::pair<std::string, std::string> partition(const std::string& text, size_t index) {
         return std::make_pair(text.substr(0, index), text.substr(index));
     }
+
+    /// Converts a string into a vector of `char`s.
+    inline std::vector<char> to_char_vector(const std::string& text) {
+        return std::vector<char>(text.begin(), text.end());
+    }
 }
