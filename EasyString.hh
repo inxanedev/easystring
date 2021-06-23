@@ -3,6 +3,8 @@
 #include <vector>
 
 namespace easystring {
+    const std::string WHITESPACE = " \n\r\t\f\v";
+
     /// Makes the string uppercase.
     inline std::string uppercase(const std::string& text) {
         std::ostringstream result;
@@ -99,5 +101,22 @@ namespace easystring {
             result << c;
         }
         return result.str();
+    }
+
+    /// Removes all whitespace from the left of the string.
+    inline std::string trim_left(const std::string& text) {
+        size_t start = text.find_first_not_of(WHITESPACE);
+        return (start == std::string::npos) ? "" : text.substr(start);
+    }
+
+    /// Removes all whitespace from the right of the string.
+    inline std::string trim_right(const std::string& text) {
+        size_t end = text.find_last_not_of(WHITESPACE);
+        return (end == std::string::npos) ? "" : text.substr(0, end + 1);
+    }
+
+    /// Removes all leading and trailing whitespace from the string.
+    inline std::string trim(const std::string& text) {
+        return trim_left(trim_right(text));
     }
 }
