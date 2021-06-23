@@ -119,4 +119,24 @@ namespace easystring {
     inline std::string trim(const std::string& text) {
         return trim_left(trim_right(text));
     }
+
+    /// Reverses a string.
+    inline std::string reverse(const std::string& text) {
+        std::ostringstream result;
+        for (int i = text.length() - 1; i >= 0; i--) {
+            result << text[i];
+        }
+        return result.str();
+    }
+
+    /// Returns true if `text` starts with `prefix`.
+    inline bool starts_with(const std::string& text, const std::string& prefix) {
+        return text.find(prefix) == 0;
+    }
+
+    /// Returns true if `text` ends with `prefix`
+    inline bool ends_with(const std::string& text, const std::string& suffix) {
+        if (suffix.length() > text.length()) return false;
+        return text.compare(text.length() - suffix.length(), suffix.length(), suffix) == 0;
+    }
 }
