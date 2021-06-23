@@ -1,6 +1,7 @@
 
 # easystring
 C++ Single-header library containing simple string utilities.
+Useful when you don't feel like using a massive library such as boost to split some text in a small command line utility.
 
 # usage
 All you gotta do is include the header file in your code. No compilation needed.  
