@@ -3,9 +3,17 @@
 #include <vector>
 #include <unordered_map>
 
-namespace easystring {
-    const std::string WHITESPACE = " \n\r\t\f\v";
+#define ES_WHITESPACE " \n\r\t\f\v"
+#define ES_ALPHABET_LOWERCASE "abcdefghijklmnopqrstuvwxyz"
+#define ES_ALPHABET_UPPERCASE "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#define ES_ALPHABET "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#define ES_NUMERIC "0123456789"
+#define ES_ALPHANUMERIC "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+#define ES_SPECIAL "!@#$%^&*()_+-=[]{}\\|;'./:\">?`~"
+#define ES_ALPHANUMERICSPECIAL "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}\\|;'./:\">?`~"
 
+/// Namespace containing the functionality of the EasyString library.
+namespace easystring {
     /// Makes the string uppercase.
     inline std::string uppercase(const std::string& text) {
         std::ostringstream result;
@@ -106,13 +114,13 @@ namespace easystring {
 
     /// Removes all whitespace from the left of the string.
     inline std::string trim_left(const std::string& text) {
-        size_t start = text.find_first_not_of(WHITESPACE);
+        size_t start = text.find_first_not_of(ES_WHITESPACE);
         return (start == std::string::npos) ? "" : text.substr(start);
     }
 
     /// Removes all whitespace from the right of the string.
     inline std::string trim_right(const std::string& text) {
-        size_t end = text.find_last_not_of(WHITESPACE);
+        size_t end = text.find_last_not_of(ES_WHITESPACE);
         return (end == std::string::npos) ? "" : text.substr(0, end + 1);
     }
 
