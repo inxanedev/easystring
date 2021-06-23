@@ -74,4 +74,30 @@ namespace easystring {
         result.push_back(text);
         return result;
     }
+
+    /// Justify the string from the left with `c`, until the whole string reaches length `length`.
+    inline std::string left_justify(const std::string& text, char c, int length) {
+        int amount = length - text.length();
+        if (amount < 1) return text;
+
+        std::ostringstream result;
+        for (int i = 0; i < amount; i++) {
+            result << c;
+        }
+        result << text;
+        return result.str();
+    }
+
+    /// Justify the string from the right with `c`, until the whole string reaches length `length`.
+    inline std::string right_justify(const std::string& text, char c, int length) {
+        int amount = length - text.length();
+        if (amount < 1) return text;
+
+        std::ostringstream result;
+        result << text;
+        for (int i = 0; i < amount; i++) {
+            result << c;
+        }
+        return result.str();
+    }
 }
