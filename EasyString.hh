@@ -1,6 +1,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 
 namespace easystring {
     const std::string WHITESPACE = " \n\r\t\f\v";
@@ -167,6 +168,14 @@ namespace easystring {
         while ((pos = text.find(from, pos)) != std::string::npos) {
             text.replace(pos, from.length(), to);
             pos += to.length();
+        }
+        return text;
+    }
+
+    /// Replace everything in `text` using the from -> to map in `map`.
+    inline std::string replace(std::string text, const std::unordered_map<std::string, std::string> map) {
+        for (const std::pair<std::string, std::string> transform : map) {
+            text = replace(text, transform.first, transform.second);
         }
         return text;
     }
