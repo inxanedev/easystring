@@ -33,7 +33,7 @@ namespace easystring {
     }
 
     /// Puts `amount` of `c` to the left of `text`.
-    inline std::string pad_left(const std::string& text, char c, int amount) {
+    inline std::string pad_left(const std::string& text, char c, size_t amount) {
         std::ostringstream result;
         for (int i = 0; i < amount; i++) {
             result << c;
@@ -43,7 +43,7 @@ namespace easystring {
     }
 
     /// Puts `amount` of `c` to the right of `text`.
-    inline std::string pad_right(const std::string& text, char c, int amount) {
+    inline std::string pad_right(const std::string& text, char c, size_t amount) {
         std::ostringstream result;
         result << text;
         for (int i = 0; i < amount; i++) {
@@ -87,7 +87,7 @@ namespace easystring {
     }
 
     /// Justify the string from the left with `c`, until the whole string reaches length `length`.
-    inline std::string left_justify(const std::string& text, char c, int length) {
+    inline std::string left_justify(const std::string& text, char c, size_t length) {
         int amount = length - text.length();
         if (amount < 1) return text;
 
@@ -100,7 +100,7 @@ namespace easystring {
     }
 
     /// Justify the string from the right with `c`, until the whole string reaches length `length`.
-    inline std::string right_justify(const std::string& text, char c, int length) {
+    inline std::string right_justify(const std::string& text, char c, size_t length) {
         int amount = length - text.length();
         if (amount < 1) return text;
 
