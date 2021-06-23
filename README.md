@@ -76,3 +76,6 @@ It will perform a replace on the `string` according to the map.
 
 ### `es::join(vector of strings, <separator>) -> string`
 Join all the strings together, optionally with a separator. By default there's no space between the joined strings.
+
+### `es::capitalize(string) -> string`
+Capitalize the first letter of the string.

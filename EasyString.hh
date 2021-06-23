@@ -189,4 +189,12 @@ namespace easystring {
         }
         return result.str();
     }
+
+    /// Capitalizes the first letter of the string.
+    inline std::string capitalize(const std::string& text) {
+        std::string result = text;
+        result[0] = toupper(result[0]);
+
+        return result;
+    }
 }
