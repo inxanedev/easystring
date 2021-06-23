@@ -139,4 +139,35 @@ namespace easystring {
         if (suffix.length() > text.length()) return false;
         return text.compare(text.length() - suffix.length(), suffix.length(), suffix) == 0;
     }
+
+    /// Returns true if `text` contains `other`.
+    inline bool contains(const std::string& text, const std::string& other) {
+        return text.find(other) != std::string::npos;
+    }
+
+    /// Returns true if all characters in `text` are uppercase.
+    inline bool is_upper(const std::string& text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (!isupper(text[i])) return false;
+        }
+        return true;
+    }
+
+    /// Returns true if all characters in `text` are lowercase.
+    inline bool is_lower(const std::string& text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (!islower(text[i])) return false;
+        }
+        return true;
+    }
+
+    /// Replace all occurences of `from` with `to` in `text`.
+    inline std::string replace(std::string text, const std::string& from, const std::string& to) {
+        size_t pos = 0;
+        while ((pos = text.find(from, pos)) != std::string::npos) {
+            text.replace(pos, from.length(), to);
+            pos += to.length();
+        }
+        return text;
+    }
 }
