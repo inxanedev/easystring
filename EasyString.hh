@@ -179,4 +179,14 @@ namespace easystring {
         }
         return text;
     }
+
+    /// Joins all the strings in `strings`, optionally provide a separator
+    inline std::string join(const std::vector<std::string>& strings, const std::string& separator = "") {
+        std::ostringstream result;
+        for (int i = 0; i < strings.size(); i++) {
+            result << strings[i];
+            if (i != strings.size() - 1) result << separator;
+        }
+        return result.str();
+    }
 }

@@ -69,6 +69,10 @@ Returns `true` if all characters in the string are lowercase.
 
 ### `es::replace(string, from, to) -> string`
 Replaces all occurences of `from` with `to` in the string.
+
 ### `es::replace(string, map) -> string`
 The map is supposed to be a `unordered_map` of strings to strings.
 It will perform a replace on the `string` according to the map.
+
+### `es::join(vector of strings, <separator>) -> string`
+Join all the strings together, optionally with a separator. By default there's no space between the joined strings.
