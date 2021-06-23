@@ -1,5 +1,6 @@
 #include <sstream>
 #include <string>
+#include <vector>
 
 namespace easystring {
     /// Makes the string uppercase.
@@ -58,5 +59,19 @@ namespace easystring {
 
         std::string to_trim = result.str();
         return to_trim.substr(0, to_trim.length() - 1);
+    }
+
+    /// Split a string into a list of strings, using a string delimiter.
+    inline std::vector<std::string> split(std::string text, const std::string& delim) {
+        std::vector<std::string> result;
+        size_t pos = 0;
+        std::string token;
+        while ((pos = text.find(delim)) != std::string::npos) {
+            token = text.substr(0, pos);
+            result.push_back(token);
+            text.erase(0, pos + delim.length());
+        }
+        result.push_back(text);
+        return result;
     }
 }
