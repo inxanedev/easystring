@@ -205,4 +205,9 @@ namespace easystring {
 
         return result;
     }
+
+    /// Splits the string into two at the specified index, and returns an std::pair containing both of them.
+    inline std::pair<std::string, std::string> partition(const std::string& text, size_t index) {
+        return std::make_pair(text.substr(0, index), text.substr(index));
+    }
 }
